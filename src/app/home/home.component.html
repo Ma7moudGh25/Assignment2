@@ -1,0 +1,74 @@
+
+<div class="flex">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white p-4 shadow-md">
+      <div class="text-3xl font-bold text-green-600 flex items-center space-x-2">
+          <span>🍃 Recipe</span>
+      </div>
+      <nav class="mt-6">
+          <button class="w-full bg-orange-500 text-white py-2 rounded-lg mb-2">🍽 Meals</button>
+          <button class="w-full bg-gray-200 text-gray-800 py-2 rounded-lg mb-2">🍽 Ingredients</button>
+          <button class="w-full bg-gray-200 text-gray-800 py-2 rounded-lg">🍽 Area</button>
+      </nav>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="flex-1 p-8">
+      <h1 class="text-4xl font-bold text-orange-500 mb-6">Learn, Cook, Eat Your Food</h1>
+      
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-3 mb-6">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+          <button (click)="fetchProducts('All')" id="all" class="px-4 py-2 bg-black text-white rounded-full">All</button>
+          <button (click)="fetchProducts('Beef')" class="px-4 py-2 bg-gray-200 rounded-full">Beef</button>
+          <button (click)="fetchProducts('Breakfast')" class="px-4 py-2 bg-gray-200 rounded-full">Breakfast</button>
+          <button (click)="fetchProducts('Chicken')" class="px-4 py-2 bg-gray-200 rounded-full">Chicken</button>
+          <button (click)="fetchProducts('Dessert')" class="px-4 py-2 bg-gray-200 rounded-full">Dessert</button>
+          <button (click)="fetchProducts('Goat')" class="px-4 py-2 bg-gray-200 rounded-full">Goat</button>
+          <button (click)="fetchProducts('Lamp')" class="px-4 py-2 bg-gray-200 rounded-full">Lamp</button>
+          <button (click)="fetchProducts('Miscellaneous')" class="px-4 py-2 bg-gray-200 rounded-full">Miscellaneous</button>
+          <button (click)="fetchProducts('Pasta')" class="px-4 py-2 bg-gray-200 rounded-full">Pasta</button>
+          <button (click)="fetchProducts('Pork')" class="px-4 py-2 bg-gray-200 rounded-full">Pork</button>
+          <button (click)="fetchProducts('Seafood')" class="px-4 py-2 bg-gray-200 rounded-full">Seafood</button>
+          <button (click)="fetchProducts('Side')" class="px-4 py-2 bg-gray-200 rounded-full">Side</button>
+          <button (click)="fetchProducts('Starter')" class="px-4 py-2 bg-gray-200 rounded-full">Starter</button>
+          <button (click)="fetchProducts('Vegan')" class="px-4 py-2 bg-gray-200 rounded-full">Vegan</button>
+          <button (click)="fetchProducts('Vegetarian')" class="px-4 py-2 bg-gray-200 rounded-full">Vegetarian</button>
+      
+      </div>
+      
+      <!-- Recipe Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="beef">
+          <!-- Recipe Card -->
+           @for (meal of products; track $index) {
+            <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+              <img [src]="meal.strMealThumb" alt="Sushi" class="w-full h-40 object-cover rounded-full mx-auto">
+              <h3 class="text-xl font-bold mt-4">{{meal.strMeal}}</h3>
+             
+          </div>
+           }
+         
+          
+          
+      </div>
+     
+
+  </main>
+</div>
+
+
